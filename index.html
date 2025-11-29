@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Андреас Тиссен — Путь к непоколебимой уверенности</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,7 +14,6 @@
       --bg-main: #05050A;
       --bg-section-dark: #0B0F23;
       --bg-card: #111322;
-      --bg-card-soft: #181A2B;
       --bg-deep-blue: #141C3A;
 
       --gold: #D4AF37;
@@ -150,6 +148,7 @@
       transition: all 0.35s ease;
       text-transform: uppercase;
       letter-spacing: 0.08em;
+      width: auto; /* Сброс для десктопа */
     }
 
     .cta-button:hover {
@@ -537,7 +536,10 @@
       border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-    /* RESPONSIVE */
+    /* ================================== */
+    /* RESPONSIVE IMPROVEMENTS (MOBILE)   */
+    /* ================================== */
+
     @media (max-width: 1024px) {
       .hero-text h1 { font-size: 58px; }
       .hero-text h1 .gold-text { font-size: 72px; }
@@ -545,45 +547,122 @@
     }
 
     @media (max-width: 768px) {
+      .section {
+        padding: 80px 20px; /* Меньше вертикального отступа на мобильных */
+      }
+      
       .hero {
-        padding-top: 110px;
+        padding-top: 100px; /* Достаточно места сверху */
+        padding-bottom: 80px;
       }
 
-      .hero-text h1 { font-size: 40px; }
-      .hero-text h1 .gold-text { font-size: 52px; }
-      .hero-text .subheadline { font-size: 18px; }
+      .hero-text h1 { 
+        font-size: 38px; /* Уменьшаем основной заголовок */
+        margin-bottom: 15px;
+      }
+      .hero-text h1 .gold-text { 
+        font-size: 48px; /* Уменьшаем акцентный заголовок */
+      }
+      .hero-text .subheadline { font-size: 17px; }
+      .hero-text .tagline { font-size: 14px; margin-bottom: 30px; }
+      
+      .cta-button {
+        padding: 16px 40px;
+        font-size: 16px;
+        display: block; /* CTA на всю ширину на мобильных */
+        width: 100%;
+        max-width: 320px; /* Ограничение ширины для лучшего вида */
+        margin-left: auto;
+        margin-right: auto;
+      }
 
+      /* Status Bar - Переход в одну колонку */
+      .status-bar {
+        padding: 30px 20px;
+      }
       .status-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
+        grid-template-columns: 1fr; /* Одна колонка */
+        gap: 20px;
+      }
+      .status-value {
+        font-size: 36px;
+        margin-bottom: 4px;
+      }
+      .status-label {
+        font-size: 11px;
       }
 
-      .section-title { font-size: 34px; }
+      .section-title { 
+        font-size: 30px; /* Уменьшаем заголовки секций */
+        margin-bottom: 40px;
+      }
+      .section-title::after {
+          margin: 15px auto 0;
+      }
 
-      .guarantee-section h2 { font-size: 32px; }
-      .final-cta-section h2 { font-size: 32px; }
+      /* Карточки - Одна колонка */
+      .value-grid, .programs-grid { 
+          grid-template-columns: 1fr; 
+          gap: 24px;
+      }
+      .value-card { padding: 25px; }
+      .program-card { padding: 30px; }
+      .program-card h3 { font-size: 22px; }
 
+      /* Гарантия */
+      .guarantee-section h2 { 
+        font-size: 28px; 
+      }
+      .guarantee-content p {
+        font-size: 16px;
+      }
+      .guarantee-seal {
+        padding: 10px 24px;
+        font-size: 14px;
+      }
+      
+      /* Аватар (Чат) - Вертикальный стек */
       .avatar-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; 
+        gap: 30px;
       }
+      .avatar-intro { text-align: center; }
+      .avatar-intro h2 { font-size: 30px; }
+      .avatar-intro p { max-width: 100%; }
 
-      .avatar-intro p {
-        max-width: 100%;
+      /* Форма */
+      .application-subtitle { font-size: 15px; }
+      .compact-form { padding: 25px; }
+
+      /* Финальный CTA */
+      .final-cta-section h2 { 
+        font-size: 28px; 
+        margin-bottom: 25px;
       }
-
-      .compact-form {
-        padding: 28px 20px;
-      }
-
       .cta-buttons {
-        flex-direction: column;
+        flex-direction: column; /* Кнопки одна под другой */
+        gap: 12px;
       }
+      .cta-buttons .cta-button {
+          width: 100%;
+          max-width: 300px;
+      }
+
+      /* Футер */
+      .footer { padding: 30px 20px; }
+      .footer-tagline { font-size: 14px; }
+      .copyright { font-size: 12px; }
+    }
+    
+    @media (max-width: 480px) {
+        /* Дополнительное уменьшение для самых маленьких экранов */
+        .hero-text h1 { font-size: 34px; }
+        .hero-text h1 .gold-text { font-size: 42px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
       <div class="hero-text">
@@ -600,7 +679,6 @@
     </div>
   </section>
 
-  <!-- STATUS BAR -->
   <div class="status-bar">
     <div class="status-grid container">
       <div class="status-item">
@@ -618,7 +696,6 @@
     </div>
   </div>
 
-  <!-- WHY TISSEN -->
   <section class="section">
     <div class="container">
       <h2 class="section-title">ПОЧЕМУ <span class="gold-accent">ТИССЕН</span>?</h2>
@@ -653,7 +730,6 @@
 
   <div class="section-divider"></div>
 
-  <!-- PROGRAMS -->
   <section class="section programs-section">
     <div class="container">
       <h2 class="section-title">ФЛАГМАНСКИЕ <span class="gold-accent">ПРОГРАММЫ</span></h2>
@@ -686,7 +762,6 @@
     </div>
   </section>
 
-  <!-- GUARANTEE -->
   <section class="section guarantee-section">
     <div class="container">
       <div class="guarantee-content">
@@ -700,7 +775,6 @@
     </div>
   </section>
 
-  <!-- AVATAR -->
   <section class="section avatar-section" id="alina-chat">
     <div class="container">
       <div class="avatar-container">
@@ -721,7 +795,6 @@
     </div>
   </section>
 
-  <!-- APPLICATION -->
   <section class="section application-section" id="application-form">
     <div class="container">
       <div class="application-content">
@@ -742,7 +815,6 @@
     </div>
   </section>
 
-  <!-- FINAL CTA -->
   <section class="section final-cta-section">
     <div class="container">
       <h2>НЕ ЖДИТЕ. НАЧНИТЕ ВАШУ <span class="gold-accent">ИСТОРИЮ УСПЕХА</span></h2>
@@ -753,7 +825,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-content container">
       <div class="footer-tagline">Ваш успешный навигатор — Андреас Тиссен</div>
