@@ -1,888 +1,701 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Андреас Тиссен — Путь к непоколебимой уверенности</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Андреас Тиссен — Непоколебимая Уверенность</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Premium Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+
+    /* ---------------------------------------------
+       ROOT — PREMIUM COLOR SYSTEM
+    ----------------------------------------------*/
     :root {
-      --bg-main: #05050A;
-      --bg-section-dark: #0B0F23;
+      --bg: #05050A;
+      --bg-soft: #0B0F23;
       --bg-card: #111322;
-      --bg-deep-blue: #141C3A;
+      --bg-blue: #141C3A;
+
+      --white: #FFFFFF;
+      --text: #EAEAEA;
+      --text-muted: rgba(234,234,234,0.65);
 
       --gold: #D4AF37;
-      --gold-soft: rgba(212, 175, 55, 0.15);
-      --gold-glow: rgba(212, 175, 55, 0.45);
+      --gold-soft: rgba(212,175,55,0.15);
+      --gold-glow: rgba(212,175,55,0.4);
 
-      --text-main: #F5F5F5;
-      --text-muted: rgba(245, 245, 245, 0.7);
-      --white: #FFFFFF;
-      --border-soft: rgba(255, 255, 255, 0.1);
+      --radius: 16px;
+      --radius-lg: 22px;
+
+      --container: 1150px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * {margin:0; padding:0; box-sizing:border-box;}
+    html {scroll-behavior:smooth;}
 
     body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--bg-main);
-      color: var(--text-main);
-      line-height: 1.7;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
       overflow-x: hidden;
+      line-height: 1.65;
       font-weight: 400;
     }
 
-    h1, h2, h3, h4, h5 {
+    h1,h2,h3,h4 {
       font-family: 'Playfair Display', serif;
       font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: 0.02em;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+      color: var(--white);
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a {text-decoration:none;}
 
+    /* ---------------------------------------------
+       LAYOUT
+    ----------------------------------------------*/
     .container {
-      max-width: 1100px;
+      width: 90%;
+      max-width: var(--container);
       margin: 0 auto;
-      padding: 0 20px;
     }
 
     .section {
-      padding: 100px 20px;
+      padding: 120px 0;
       position: relative;
     }
 
     .section-title {
-      font-size: 52px;
-      text-align: center;
+      text-align:center;
+      font-size: 56px;
       margin-bottom: 60px;
     }
 
-    .section-title span.gold-accent {
+    .section-title span {
       color: var(--gold);
     }
 
-    .section-title::after {
-      content: "";
-      display: block;
+    .section-title:after {
+      content:"";
       width: 120px;
       height: 3px;
-      margin: 25px auto 0;
       background: var(--gold);
-      border-radius: 999px;
+      display:block;
+      margin:22px auto 0;
+      border-radius:999px;
     }
 
-    /* HERO */
+    /* ---------------------------------------------
+       HERO — PREMIUM (with radial gold aura)
+    ----------------------------------------------*/
     .hero {
-      min-height: 100vh;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:140px 0 100px;
+
       background:
-        radial-gradient(circle at top, var(--gold-soft), transparent 60%),
-        linear-gradient(135deg, #040612 0%, #111937 100%);
-      display: flex;
-      align-items: center;
-      text-align: center;
-      padding: 120px 20px 100px;
+        radial-gradient(circle at top, var(--gold-soft), transparent 65%),
+        linear-gradient(130deg,#040611 0%,#111937 100%);
     }
 
-    .hero-content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero-text h1 {
-      font-size: 72px;
-      color: var(--white);
-      margin-bottom: 25px;
+    .hero h1 {
+      font-size: 76px;
+      margin-bottom: 28px;
       text-transform: uppercase;
     }
 
-    .hero-text h1 .gold-text {
+    .hero h1 .gold {
+      display:block;
       color: var(--gold);
-      display: block;
-      font-size: 86px;
-      font-weight: 900;
-      line-height: 0.95;
+      font-size: 92px;
+      line-height:0.9;
+      font-weight:900;
     }
 
-    .hero-text .subheadline {
+    .hero p.sub {
       font-size: 22px;
       color: var(--text-muted);
-      margin-bottom: 20px;
-      font-weight: 500;
+      max-width: 780px;
+      margin: 0 auto 25px;
     }
 
-    .hero-text .tagline {
+    .hero p.tag {
       font-size: 16px;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
       color: var(--gold);
-      margin-bottom: 45px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+      margin-bottom:50px;
     }
 
-    .cta-button {
-      display: inline-block;
-      padding: 20px 56px;
+    .cta {
       background: var(--gold);
       color: #05050A;
-      font-size: 18px;
-      font-weight: 700;
-      border-radius: 999px;
-      box-shadow: 0 20px 50px var(--gold-glow);
-      transition: all 0.35s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      width: auto; /* Сброс для десктопа */
+      display:inline-block;
+      padding:20px 56px;
+      border-radius:999px;
+      font-size:18px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      box-shadow:0 18px 50px var(--gold-glow);
+      transition:0.35s ease;
     }
 
-    .cta-button:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 25px 60px var(--gold-glow);
+    .cta:hover {
+      transform:translateY(-2px) scale(1.02);
+      box-shadow:0 26px 70px var(--gold-glow);
     }
 
-    /* STATUS BAR */
+    /* ---------------------------------------------
+       STATUS BAR
+    ----------------------------------------------*/
     .status-bar {
-      background: #05060D;
-      border-top: 1px solid var(--border-soft);
-      border-bottom: 1px solid var(--border-soft);
-      padding: 40px 20px;
+      background:#05060D;
+      border-top:1px solid rgba(255,255,255,0.08);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      padding:42px 0;
     }
 
     .status-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 40px;
-      align-items: center;
-      text-align: center;
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      text-align:center;
+      gap:50px;
     }
 
     .status-value {
-      font-size: 44px;
-      font-weight: 800;
+      font-size:46px;
       color: var(--gold);
-      margin-bottom: 6px;
+      font-weight:900;
+      margin-bottom:4px;
     }
 
     .status-label {
-      font-size: 12px;
+      font-size:12px;
       color: var(--text-muted);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
     }
 
-    /* VALUE GRID */
+    /* ---------------------------------------------
+       VALUE CARDS
+    ----------------------------------------------*/
     .value-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      gap:32px;
     }
 
     .value-card {
       background: var(--bg-card);
-      padding: 32px;
-      border-radius: 10px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
-      border-left: 4px solid var(--gold);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding:36px;
+      border-radius: var(--radius);
+      border-left:5px solid var(--gold);
+      box-shadow:0 18px 50px rgba(0,0,0,0.45);
+      transition:0.35s ease;
     }
 
     .value-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+      transform:translateY(-4px);
+      box-shadow:0 24px 60px rgba(0,0,0,0.65);
     }
 
     .value-card h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-      text-transform: none;
-      letter-spacing: 0;
-      color: var(--white);
+      font-size:24px;
+      margin-bottom:16px;
     }
 
     .value-card ul {
-      list-style: none;
-      padding-left: 0;
+      list-style:none;
+      padding-left:0;
+    }
+
+    .value-card li {
+      margin-bottom:10px;
+      padding-left:16px;
       color: var(--text-muted);
-      font-size: 15px;
+      position:relative;
+      font-size:16px;
     }
 
-    .value-card ul li {
-      margin-bottom: 8px;
-      position: relative;
-      padding-left: 14px;
+    .value-card li:before {
+      content:"–";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--gold);
+      font-weight:700;
     }
 
-    .value-card ul li::before {
-      content: "–";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    .section-divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border-soft), transparent);
-      margin: 0 auto;
-      max-width: 1100px;
-    }
-
-    /* PROGRAMS */
+    /* ---------------------------------------------
+       PROGRAMS
+    ----------------------------------------------*/
     .programs-section {
-      background: #050712;
-      color: var(--white);
-    }
-
-    .programs-section .section-title {
-      color: var(--white);
+      background: #070A16;
     }
 
     .programs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(330px,1fr));
+      gap:36px;
     }
 
     .program-card {
-      background: var(--bg-deep-blue);
-      color: var(--white);
-      padding: 40px;
-      border-radius: 14px;
-      border-top: 4px solid var(--gold);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+      background: var(--bg-blue);
+      padding:40px;
+      border-radius: var(--radius-lg);
+      border-top:5px solid var(--gold);
+      box-shadow:0 22px 65px rgba(0,0,0,0.55);
     }
 
     .program-card h3 {
-      color: var(--gold);
-      font-size: 26px;
-      margin-bottom: 10px;
+      color:var(--gold);
+      font-size:26px;
+      margin-bottom:12px;
     }
 
     .program-meta {
-      color: var(--text-muted);
-      font-size: 14px;
-      margin-bottom: 18px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+      font-size:14px;
+      text-transform:uppercase;
+      color:var(--text-muted);
+      letter-spacing:0.12em;
+      margin-bottom:20px;
     }
 
     .program-card ul {
-      list-style: none;
-      padding-left: 0;
-      margin-bottom: 18px;
-      font-size: 15px;
+      list-style:none;
+      padding-left:0;
+      margin-bottom:20px;
     }
 
-    .program-card ul li {
-      margin-bottom: 8px;
-      position: relative;
-      padding-left: 16px;
-      color: rgba(255,255,255,0.92);
+    .program-card li {
+      padding-left:16px;
+      margin-bottom:10px;
+      position:relative;
     }
 
-    .program-card ul li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--gold);
+    .program-card li:before {
+      content:"•";
+      position:absolute;
+      color:var(--gold);
+      left:0;
+      top:0;
     }
 
-    .program-motto {
-      font-weight: 500;
-      color: #E6E6E6;
-      font-style: normal;
-      font-size: 15px;
-      margin-top: 4px;
-    }
-
-    /* GUARANTEE */
+    /* ---------------------------------------------
+       GUARANTEE
+    ----------------------------------------------*/
     .guarantee-section {
-      background: #070812;
-      color: var(--text-main);
+      background:#06060E;
+      text-align:center;
     }
 
     .guarantee-content {
-      text-align: center;
-      max-width: 750px;
-      margin: 0 auto;
+      max-width:750px;
+      margin:0 auto;
     }
 
     .guarantee-section h2 {
-      font-size: 46px;
-      color: var(--white);
-      margin-bottom: 15px;
-    }
-
-    .guarantee-section h2 span.gold-accent {
-      color: var(--gold);
+      font-size:48px;
     }
 
     .guarantee-content p {
-      font-size: 18px;
-      margin: 0 auto 32px;
-      color: var(--text-muted);
+      margin:18px 0 36px;
+      font-size:18px;
+      color:var(--text-muted);
     }
 
     .guarantee-seal {
-      display: inline-block;
-      padding: 14px 32px;
-      background: var(--bg-card);
-      color: var(--gold);
-      font-size: 18px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      border-radius: 999px;
-      border: 1px solid var(--gold);
-      box-shadow: 0 14px 36px rgba(0,0,0,0.6);
+      display:inline-block;
+      padding:14px 32px;
+      background:var(--bg-card);
+      border:1px solid var(--gold);
+      color:var(--gold);
+      border-radius:999px;
+      text-transform:uppercase;
+      font-weight:700;
+      letter-spacing:0.18em;
+      box-shadow:0 20px 55px rgba(0,0,0,0.7);
     }
 
-    /* AVATAR */
+    /* ---------------------------------------------
+       AVATAR (AI Assistant)
+    ----------------------------------------------*/
     .avatar-section {
-      background: #05050A;
+      background:#05050A;
     }
 
     .avatar-container {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
-      gap: 40px;
-      align-items: center;
+      display:grid;
+      grid-template-columns:1fr 1.2fr;
+      gap:44px;
+      align-items:center;
     }
 
     .avatar-intro h2 {
-      font-size: 40px;
-      margin-bottom: 18px;
-    }
-
-    .avatar-intro h2 span.gold-accent {
-      color: var(--gold);
+      font-size:42px;
+      margin-bottom:16px;
     }
 
     .avatar-intro p {
-      font-size: 17px;
-      color: var(--text-muted);
-      max-width: 420px;
+      font-size:18px;
+      color:var(--text-muted);
+      max-width:420px;
     }
 
     .avatar-embed iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: none;
-      border-radius: 18px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-      border: 2px solid var(--gold-soft);
+      width:100%;
+      aspect-ratio:16/9;
+      border:none;
+      border-radius:var(--radius-lg);
+      box-shadow:0 30px 70px rgba(0,0,0,0.7);
+      border:2px solid var(--gold-soft);
     }
 
-    /* APPLICATION */
+    /* ---------------------------------------------
+       FORM
+    ----------------------------------------------*/
     .application-section {
-      background: var(--bg-section-dark);
-      color: var(--white);
-    }
-
-    .application-section .section-title {
-      color: var(--white);
+      background:var(--bg-soft);
     }
 
     .application-subtitle {
-      text-align: center;
-      color: var(--text-muted);
-      margin-bottom: 32px;
-      max-width: 620px;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 17px;
-    }
-
-    .application-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      text-align:center;
+      max-width:620px;
+      margin:0 auto 36px;
+      color:var(--text-muted);
+      font-size:18px;
     }
 
     .compact-form {
-      max-width: 420px;
-      width: 100%;
-      background: var(--bg-card);
-      padding: 36px;
-      border-radius: 14px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.65);
-      border: 1px solid var(--border-soft);
-    }
-
-    .form-group {
-      margin-bottom: 18px;
+      max-width:450px;
+      width:100%;
+      margin:0 auto;
+      padding:36px;
+      background:var(--bg-card);
+      border-radius:var(--radius-lg);
+      box-shadow:0 20px 60px rgba(0,0,0,0.65);
+      border:1px solid rgba(255,255,255,0.08);
     }
 
     .compact-form input {
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      color: var(--white);
-      font-size: 15px;
-    }
-
-    .compact-form input::placeholder {
-      color: rgba(255,255,255,0.45);
+      width:100%;
+      padding:16px;
+      border-radius:12px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.15);
+      color:var(--white);
+      margin-bottom:18px;
+      font-size:16px;
     }
 
     .compact-form input:focus {
-      outline: none;
-      border-color: var(--gold);
-      box-shadow: 0 0 0 1px rgba(212,175,55,0.35);
+      border-color:var(--gold);
+      outline:none;
+      box-shadow:0 0 0 1px var(--gold-glow);
     }
 
     .submit-button {
-      width: 100%;
-      margin-top: 8px;
-      padding: 16px;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      background: var(--gold);
-      color: #05050A;
-      font-weight: 700;
-      font-size: 16px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      box-shadow: 0 16px 40px var(--gold-glow);
-      transition: 0.3s ease;
+      width:100%;
+      background:var(--gold);
+      color:#05050A;
+      border:none;
+      padding:16px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:16px;
+      text-transform:uppercase;
+      letter-spacing:0.1em;
+      box-shadow:0 18px 45px var(--gold-glow);
+      cursor:pointer;
+      transition:0.3s;
     }
 
     .submit-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 22px 55px var(--gold-glow);
+      transform:translateY(-2px);
+      box-shadow:0 26px 60px var(--gold-glow);
     }
 
-    /* FINAL CTA */
+    /* ---------------------------------------------
+       FINAL CTA
+    ----------------------------------------------*/
     .final-cta-section {
-      background: #05050A;
-      color: var(--white);
-      text-align: center;
+      text-align:center;
     }
 
     .final-cta-section h2 {
-      font-size: 42px;
-      margin-bottom: 30px;
-    }
-
-    .final-cta-section h2 span.gold-accent {
-      color: var(--gold);
+      font-size:44px;
+      margin-bottom:32px;
     }
 
     .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .cta-primary {
-      background: var(--gold);
-      color: #05050A;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
     }
 
     .cta-secondary {
-      background: transparent;
-      border: 2px solid var(--gold);
-      color: var(--gold);
+      background:transparent;
+      border:2px solid var(--gold);
+      color:var(--gold);
     }
 
     .cta-secondary:hover {
-      background: var(--gold);
-      color: #05050A;
+      background:var(--gold);
+      color:#05050A;
     }
 
-    /* FOOTER */
+    /* ---------------------------------------------
+       FOOTER
+    ----------------------------------------------*/
     .footer {
-      background: #05050A;
-      padding: 40px 20px;
-      border-top: 1px solid var(--border-soft);
-    }
-
-    .footer-content {
-      text-align: center;
-      font-size: 14px;
-      color: var(--text-muted);
+      background:#05050A;
+      padding:42px 20px;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,0.1);
     }
 
     .footer-tagline {
-      font-size: 16px;
-      margin-bottom: 12px;
-      color: var(--text-main);
+      font-size:16px;
+      margin-bottom:12px;
     }
 
     .copyright {
-      padding-top: 12px;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size:14px;
+      color:var(--text-muted);
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding-top:14px;
+      margin-top:12px;
     }
 
-    /* ================================== */
-    /* RESPONSIVE IMPROVEMENTS (MOBILE)   */
-    /* ================================== */
+    /* ---------------------------------------------
+       MOBILE — PREMIUM MODE
+       Inspired by Apple.com breakpoints
+    ----------------------------------------------*/
 
-    @media (max-width: 1024px) {
-      .hero-text h1 { font-size: 58px; }
-      .hero-text h1 .gold-text { font-size: 72px; }
-      .section-title { font-size: 44px; }
+    @media(max-width:992px){
+      .hero h1 {font-size:58px;}
+      .hero h1 .gold {font-size:72px;}
+      .section {padding:100px 0;}
+      .avatar-container {grid-template-columns:1fr;}
     }
 
-    @media (max-width: 768px) {
-      .section {
-        padding: 80px 20px; /* Меньше вертикального отступа на мобильных */
-      }
-      
-      .hero {
-        padding-top: 100px; /* Достаточно места сверху */
-        padding-bottom: 80px;
-      }
+    @media(max-width:768px){
+      .hero h1 {font-size:40px;}
+      .hero h1 .gold {font-size:50px;}
+      .hero p.sub {font-size:18px;}
+      .hero {padding-top:120px;}
 
-      .hero-text h1 { 
-        font-size: 38px; /* Уменьшаем основной заголовок */
-        margin-bottom: 15px;
-      }
-      .hero-text h1 .gold-text { 
-        font-size: 48px; /* Уменьшаем акцентный заголовок */
-      }
-      .hero-text .subheadline { font-size: 17px; }
-      .hero-text .tagline { font-size: 14px; margin-bottom: 30px; }
-      
-      .cta-button {
-        padding: 16px 40px;
-        font-size: 16px;
-        display: block; /* CTA на всю ширину на мобильных */
-        width: 100%;
-        max-width: 320px; /* Ограничение ширины для лучшего вида */
-        margin-left: auto;
-        margin-right: auto;
-      }
+      .cta {width:100%; max-width:320px;}
 
-      /* Status Bar - Переход в одну колонку */
-      .status-bar {
-        padding: 30px 20px;
-      }
-      .status-grid {
-        grid-template-columns: 1fr; /* Одна колонка */
-        gap: 20px;
-      }
-      .status-value {
-        font-size: 36px;
-        margin-bottom: 4px;
-      }
-      .status-label {
-        font-size: 11px;
-      }
+      .section-title {font-size:32px;}
+      .status-grid {grid-template-columns:1fr; gap:24px;}
+      .value-grid {grid-template-columns:1fr;}
+      .programs-grid {grid-template-columns:1fr;}
 
-      .section-title { 
-        font-size: 30px; /* Уменьшаем заголовки секций */
-        margin-bottom: 40px;
-      }
-      .section-title::after {
-          margin: 15px auto 0;
-      }
-
-      /* Карточки - Одна колонка */
-      .value-grid, .programs-grid { 
-          grid-template-columns: 1fr; 
-          gap: 24px;
-      }
-      .value-card { padding: 25px; }
-      .program-card { padding: 30px; }
-      .program-card h3 { font-size: 22px; }
-
-      /* Гарантия */
-      .guarantee-section h2 { 
-        font-size: 28px; 
-      }
-      .guarantee-content p {
-        font-size: 16px;
-      }
-      .guarantee-seal {
-        padding: 10px 24px;
-        font-size: 14px;
-      }
-      
-      /* Аватар (Чат) - Вертикальный стек */
-      .avatar-container {
-        grid-template-columns: 1fr; 
-        gap: 30px;
-      }
-      .avatar-intro { text-align: center; }
-      .avatar-intro h2 { font-size: 30px; }
-      .avatar-intro p { max-width: 100%; }
-
-      /* Форма */
-      .application-subtitle { font-size: 15px; }
-      .compact-form { padding: 25px; }
-
-      /* Финальный CTA */
-      .final-cta-section h2 { 
-        font-size: 28px; 
-        margin-bottom: 25px;
-      }
-      .cta-buttons {
-        flex-direction: column; /* Кнопки одна под другой */
-        gap: 12px;
-      }
-      .cta-buttons .cta-button {
-          width: 100%;
-          max-width: 300px;
-      }
-
-      /* Футер */
-      .footer { padding: 30px 20px; }
-      .footer-tagline { font-size: 14px; }
-      .copyright { font-size: 12px; }
+      .avatar-intro {text-align:center;}
+      .avatar-intro h2 {font-size:32px;}
     }
-    
-    @media (max-width: 480px) {
-        /* Дополнительное уменьшение для самых маленьких экранов */
-        .hero-text h1 { font-size: 34px; }
-        .hero-text h1 .gold-text { font-size: 42px; }
+
+    @media(max-width:480px){
+      .hero h1 {font-size:34px;}
+      .hero h1 .gold {font-size:42px;}
+      .cta {max-width:300px;}
     }
+
   </style>
 </head>
+
 <body>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-text">
-        <h1>
-          НОВЫЙ УРОВЕНЬ
-          <span class="gold-text">НЕПОКОЛЕБИМОЙ УВЕРЕННОСТИ</span>
-        </h1>
-        <p class="subheadline">
-          Система Андреаса Тиссена, подтвержденная 30 годами практики и 500 000+ трансформированными жизнями.
-        </p>
-        <p class="tagline">ПРОРЫВ ЗА 72 ЧАСА</p>
-        <a href="#application-form" class="cta-button">ЗАБРОНИРОВАТЬ МЕСТО</a>
-      </div>
+      <h1>
+        НОВЫЙ УРОВЕНЬ
+        <span class="gold">НЕПОКОЛЕБИМОЙ УВЕРЕННОСТИ</span>
+      </h1>
+
+      <p class="sub">Система Андреаса Тиссена, подтвержденная 30 годами практики и 500 000+ трансформаций.</p>
+      <p class="tag">ПРОРЫВ ЗА 72 ЧАСА</p>
+
+      <a href="#application-form" class="cta">Забронировать место</a>
     </div>
   </section>
 
+  <!-- STATUS BAR -->
   <div class="status-bar">
-    <div class="status-grid container">
-      <div class="status-item">
+    <div class="container status-grid">
+      <div>
         <div class="status-value">30+</div>
-        <div class="status-label">ЛЕТ ОПЫТА</div>
+        <div class="status-label">лет опыта</div>
       </div>
-      <div class="status-item">
+
+      <div>
         <div class="status-value">500К+</div>
-        <div class="status-label">ТРАНСФОРМАЦИЙ</div>
+        <div class="status-label">историй успеха</div>
       </div>
-      <div class="status-item">
+
+      <div>
         <div class="status-value">7</div>
-        <div class="status-label">МЕЖДУНАРОДНЫХ КНИГ</div>
+        <div class="status-label">международных книг</div>
       </div>
     </div>
   </div>
 
+
+  <!-- WHY ANDREAS -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">ПОЧЕМУ <span class="gold-accent">ТИССЕН</span>?</h2>
+      <h2 class="section-title">ПОЧЕМУ <span>ТИССЕН</span>?</h2>
+
       <div class="value-grid">
+
         <div class="value-card">
           <h3>ПРАКТИЧНАЯ СИСТЕМА</h3>
           <ul>
             <li>Тренировал ТОП-менеджеров и спикеров</li>
-            <li>Результат: видимый прогресс в 72 часа</li>
-            <li>Сертификат ISA международного образца</li>
+            <li>Результат уже за 72 часа</li>
+            <li>Сертификат ISA международного уровня</li>
           </ul>
         </div>
+
         <div class="value-card">
           <h3>МИРОВОЕ ПРИЗНАНИЕ</h3>
           <ul>
             <li>Соратник Тони Роббинса и Робина Шармы</li>
             <li>Президент Международной ассоциации спикеров</li>
-            <li>Учитель 120+ экспертов мирового уровня</li>
+            <li>Учитель 120+ мировых экспертов</li>
           </ul>
         </div>
+
         <div class="value-card">
           <h3>РЕЗУЛЬТАТ И ГАРАНТИИ</h3>
           <ul>
-            <li>2-кратный рекордсмен Книги рекордов Гиннесса</li>
+            <li>2-кратный рекордсмен Гиннесса</li>
             <li>Входит в Top-500 Европы</li>
             <li>100% гарантия долгосрочного изменения</li>
           </ul>
         </div>
+
       </div>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
+  <!-- PROGRAMS -->
   <section class="section programs-section">
     <div class="container">
-      <h2 class="section-title">ФЛАГМАНСКИЕ <span class="gold-accent">ПРОГРАММЫ</span></h2>
+      <h2 class="section-title">ФЛАГМАНСКИЕ <span>ПРОГРАММЫ</span></h2>
+
       <div class="programs-grid">
+
         <div class="program-card">
-          <h3>SPEAKUP: 72 ЧАСА ПРЕОБРАЗОВАНИЯ</h3>
+          <h3>SPEAKUP: 72 ЧАСА</h3>
           <p class="program-meta">Уверенность на сцене за 3 дня (offline)</p>
           <ul>
-            <li>Выступление перед 1000+ людей (реальная сцена)</li>
+            <li>Выступление перед 1000+ людей</li>
             <li>Видеозапись + сертификат ISA</li>
-            <li>30 дней персонального сопровождения</li>
+            <li>30 дней сопровождения</li>
           </ul>
-          <div class="program-motto">
-            Фокус на ораторском мастерстве и публичном влиянии.
-          </div>
         </div>
+
         <div class="program-card">
           <h3>POWERLIFE BOOTCAMP</h3>
-          <p class="program-meta">Два раза в год на Средиземноморье</p>
+          <p class="program-meta">2 раза в год, Средиземноморье</p>
           <ul>
-            <li>Полное переосмысление личности и целей</li>
-            <li>Системное преодоление глубинных страхов</li>
-            <li>Поиск миссии и жизненного назначения</li>
+            <li>Перезагрузка личности и миссии</li>
+            <li>Преодоление внутренних барьеров</li>
+            <li>Поиск жизненной стратегии</li>
           </ul>
-          <div class="program-motto">
-            Интенсив по личностному и карьерному прорыву.
-          </div>
         </div>
+
       </div>
     </div>
   </section>
 
+
+  <!-- GUARANTEE -->
   <section class="section guarantee-section">
-    <div class="container">
-      <div class="guarantee-content">
-        <h2>100% ГАРАНТИЯ НА <span class="gold-accent">РЕЗУЛЬТАТЫ</span></h2>
-        <p>
-          Андреас гарантирует долгосрочные и измеримые изменения в вашей жизни
-          или <strong>полный возврат денег</strong>. Ваш путь к изменению мира начинается за 72 часа.
-        </p>
-        <div class="guarantee-seal">ГАРАНТИРОВАНО АНДРЕАСОМ</div>
-      </div>
+    <div class="container guarantee-content">
+      <h2>100% ГАРАНТИЯ <span>РЕЗУЛЬТАТА</span></h2>
+      <p>Если трансформация не произойдёт — Андреас возвращает деньги.  
+      Вы либо растёте, либо ничего не теряете.</p>
+
+      <div class="guarantee-seal">гарантировано андреасом</div>
     </div>
   </section>
 
+
+  <!-- AVATAR -->
   <section class="section avatar-section" id="alina-chat">
-    <div class="container">
-      <div class="avatar-container">
-        <div class="avatar-intro">
-          <h2>ПЕРСОНАЛЬНЫЙ <span class="gold-accent">АССИСТЕНТ</span></h2>
-          <p>
-            Поговорите с Алиной — она ответит на вопросы о программах, датах и первых шагах.
-          </p>
-        </div>
-        <div class="avatar-embed">
-          <iframe
-            src="https://embed.liveavatar.com/v1/a8204eae-5430-4284-9aa2-c0d7708dc10a"
-            allow="microphone"
-            title="LiveAvatar Embed">
-          </iframe>
-        </div>
+    <div class="container avatar-container">
+
+      <div class="avatar-intro">
+        <h2>ПЕРСОНАЛЬНЫЙ <span class="gold">АССИСТЕНТ</span></h2>
+        <p>Алина ответит на вопросы о программах, датах и первых шагах.</p>
       </div>
+
+      <div class="avatar-embed">
+        <iframe
+          src="https://embed.liveavatar.com/v1/a8204eae-5430-4284-9aa2-c0d7708dc10a"
+          allow="microphone"
+          title="LiveAvatar Алина">
+        </iframe>
+      </div>
+
     </div>
   </section>
 
+
+  <!-- APPLICATION -->
   <section class="section application-section" id="application-form">
     <div class="container">
-      <div class="application-content">
-        <h2 class="section-title">ПОЛУЧИТЕ <span class="gold-accent">ПЕРСОНАЛЬНУЮ КОНСУЛЬТАЦИЮ</span></h2>
-        <p class="application-subtitle">
-          Оставьте ваше имя и контакты — мы свяжемся с вами в течение 24 часов для обсуждения вашей цели.
-        </p>
-        <form class="compact-form" onsubmit="handleSubmit(event)">
-          <div class="form-group">
-            <input type="text" name="fullname" placeholder="Полное имя *" required>
-          </div>
-          <div class="form-group">
-            <input type="tel" name="phone" placeholder="Телефон или Telegram/WhatsApp *" required>
-          </div>
-          <button type="submit" class="submit-button">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>
-        </form>
-      </div>
+
+      <h2 class="section-title">ПОЛУЧИТЕ <span>ПЕРСОНАЛЬНУЮ КОНСУЛЬТАЦИЮ</span></h2>
+      <p class="application-subtitle">Заполните форму — и команда свяжется с вами в течение 24 часов.</p>
+
+      <form class="compact-form">
+        <input type="text" placeholder="Имя *" required>
+        <input type="text" placeholder="Телефон или Telegram/WhatsApp *" required>
+        <button class="submit-button">Отправить</button>
+      </form>
+
     </div>
   </section>
 
+
+  <!-- FINAL CTA -->
   <section class="section final-cta-section">
     <div class="container">
-      <h2>НЕ ЖДИТЕ. НАЧНИТЕ ВАШУ <span class="gold-accent">ИСТОРИЮ УСПЕХА</span></h2>
+      <h2>ВАША <span class="gold">ИСТОРИЯ УСПЕХА</span> НАЧИНАЕТСЯ СЕЙЧАС</h2>
       <div class="cta-buttons">
-        <a href="#application-form" class="cta-primary cta-button">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ СЕЙЧАС</a>
-        <a href="#alina-chat" class="cta-secondary cta-button">ПОГОВОРИТЬ С АЛИНОЙ</a>
+        <a href="#application-form" class="cta cta-primary">Заказать консультацию</a>
+        <a href="#alina-chat" class="cta cta-secondary">Поговорить с Алиной</a>
       </div>
     </div>
   </section>
 
+
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-content container">
-      <div class="footer-tagline">Ваш успешный навигатор — Андреас Тиссен</div>
+    <div class="footer-content">
+      <div class="footer-tagline">Ваш навигатор успеха — Андреас Тиссен</div>
       <div class="copyright">
-        &copy; 2025 Andreas Tissen. Все права защищены.
+        © 2025 Andreas Tissen. Все права защищены.
       </div>
     </div>
   </footer>
 
-  <script>
-    function handleSubmit(event) {
-      event.preventDefault();
-      const formData = new FormData(event.target);
-      const data = {
-        fullname: formData.get('fullname'),
-        phone: formData.get('phone')
-      };
 
-      alert('Спасибо! Мы свяжемся с вами в течение 24 часов.');
-      console.log('Form data:', data);
-      event.target.reset();
-    }
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#' && href.startsWith('#')) {
-          e.preventDefault();
-          const target = document.querySelector(href);
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }
-      });
-    });
-
-    // Intersection Observer for cards
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.value-card, .program-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
-  </script>
 </body>
 </html>
